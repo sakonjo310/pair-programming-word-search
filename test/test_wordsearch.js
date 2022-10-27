@@ -3,8 +3,8 @@ const assert = chai.assert;
 
 const wordSearch = require('../wordsearch.js')
 
-describe("#wordSearch()", function() {
-  it("should return false if the word is not present", function() {
+describe("#wordSearch()", function () {
+  it("should return false if the word is not present", function () {
     const result = wordSearch([
       ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
       ['S', 'E', 'I', 'N', 'F', 'E', 'L', 'D'],
@@ -20,7 +20,7 @@ describe("#wordSearch()", function() {
     assert.isFalse(result);
   });
 
-  it("should return true if the word is present", function() {
+  it("should return true if the word is present", function () {
     const result = wordSearch([
       ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
       ['S', 'E', 'I', 'N', 'F', 'E', 'L', 'D'],
@@ -35,4 +35,44 @@ describe("#wordSearch()", function() {
 
     assert.isTrue(result);
   });
+
+  it("should return false if the array is empty", function () {
+    const wordMatrix = []
+    const result = wordSearch(wordMatrix, 'Cookies');
+
+    assert.isFalse(result);
+  });
+
+  it("should return true if the word is present vertically", function () {
+    const result = wordSearch([
+      ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['S', 'E', 'I', 'N', 'F', 'E', 'L', 'D'],
+      ['Y', 'F', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['H', 'M', 'J', 'T', 'E', 'V', 'R', 'G'],
+      ['W', 'H', 'C', 'S', 'Y', 'E', 'R', 'L'],
+      ['B', 'F', 'R', 'E', 'N', 'E', 'A', 'B'],
+      ['U', 'B', 'T', 'W', 'A', 'P', 'Y', 'I'],
+      ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], 'ARRAY')
+
+    assert.isTrue(result);
+  });
+
+  it("should return true if the word is present reversed", function () {
+    const result = wordSearch([
+      ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['S', 'E', 'I', 'N', 'F', 'E', 'Y', 'D'],
+      ['Y', 'F', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['H', 'M', 'J', 'T', 'E', 'V', 'R', 'G'],
+      ['W', 'H', 'C', 'S', 'Y', 'E', 'R', 'L'],
+      ['B', 'F', 'R', 'E', 'N', 'E', 'A', 'B'],
+      ['U', 'B', 'T', 'W', 'A', 'P', 'T', 'I'],
+      ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], 'ARRAY')
+
+    assert.isTrue(result);
+  });
+
 });
