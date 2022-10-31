@@ -72,16 +72,5 @@ const wordSearch = (letters, word) => {
     return false;
 };
 
-console.log(wordSearch([
-    ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
-    ['S', 'E', 'I', 'F', 'F', 'E', 'L', 'D'],
-    ['Y', 'F', 'C', 'F', 'R', 'U', 'A', 'L'],
-    ['H', 'M', 'J', 'N', 'E', 'A', 'R', 'G'],
-    ['W', 'H', 'L', 'S', 'Y', 'E', 'N', 'L'],
-    ['B', 'R', 'R', 'E', 'N', 'E', 'Y', 'K'],
-    ['F', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
-    ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
-    ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
-  ], 'FRANK'))
 
 module.exports = wordSearch
