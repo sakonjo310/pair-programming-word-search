@@ -31,7 +31,6 @@ const wordSearch = (letters, word) => {
         const rows = horizontalJoin.length;
         const cols = horizontalJoin[0].length;
         let diagArr = [];
-        let diagArr2 = [];
 
         for (let n = 0; n < cols + rows - 1; n++) {
             let r = n;
